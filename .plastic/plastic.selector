@@ -1,4 +1,0 @@
-repository "clicker@a01198630@cloud"
-  path "/"
-    br "/main"
-    co "/main"
