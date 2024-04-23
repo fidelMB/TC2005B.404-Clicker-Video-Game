@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Filas Leaderboard
+  - nombre_usuario
+  - neo_coins
+  - neo_stars
+  - puntuacion
   layers:
   - Default
   - TransparentFX
