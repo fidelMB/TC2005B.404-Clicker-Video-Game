@@ -18,36 +18,9 @@ public class UpgradeManager : MonoBehaviour
     public TMP_Text upagradeNameLevelAndNextLevelText; // Texto que muestra el nombre del upgrade, el nivel actual y el incremento del siguiente nivel
     public string upgradeType; // Tipo de upgrade, si es de "Auto Click" o de "Click Power"
     
-
-    //public string upgradeCostCoin;
-
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        if (upgradeName == "Mouse")
-        {
-            upgradeIncrement = SaveDataManager.gameProgressData.upgradeIncrementMouse;
-            upgradeCost = SaveDataManager.gameProgressData.upgradeCostMouse;
-            upgradeLevel = SaveDataManager.gameProgressData.upgradeLevelMouse;
-        }
-        else if (upgradeName == "Silla")
-        {
-            upgradeIncrement = SaveDataManager.gameProgressData.upgradeIncrementChair;
-            upgradeCost = SaveDataManager.gameProgressData.upgradeCostChair;
-            upgradeLevel = SaveDataManager.gameProgressData.upgradeLevelChair;
-        }
-        else if (upgradeName == "GPU")
-        {
-            upgradeIncrement = SaveDataManager.gameProgressData.upgradeIncrementGPU;
-            upgradeCost = SaveDataManager.gameProgressData.upgradeCostGPU;
-            upgradeLevel = SaveDataManager.gameProgressData.upgradeLevelGPU;
-        }
-        else if (upgradeName == "GPT")
-        {
-            upgradeIncrement = SaveDataManager.gameProgressData.upgradeIncrementGPT;
-            upgradeCost = SaveDataManager.gameProgressData.upgradeCostGPT;
-            upgradeLevel = SaveDataManager.gameProgressData.upgradeLevelGPT;
-        }
 
         // Si el tipo de upgrade es de autoclick se muestra el incremento en monedas por segundo,
         // si es de click se muestra el incremento en monedas por click
@@ -101,32 +74,6 @@ public class UpgradeManager : MonoBehaviour
             // Actualizar texto del botón
             upgradeBuyButtonText.text = "<sprite name=neo_coin>" + upgradeCost;
 
-            // Actualizar el nivel del upgrade en el archivo de guardado
-            if (upgradeName == "Mouse")
-            {
-                SaveDataManager.gameProgressData.upgradeIncrementMouse = upgradeIncrement;
-                SaveDataManager.gameProgressData.upgradeCostMouse = upgradeCost;
-                SaveDataManager.gameProgressData.upgradeLevelMouse = upgradeLevel;
-            }
-            else if (upgradeName == "Silla")
-            {
-                SaveDataManager.gameProgressData.upgradeIncrementChair = upgradeIncrement;
-                SaveDataManager.gameProgressData.upgradeCostChair = upgradeCost;
-                SaveDataManager.gameProgressData.upgradeLevelChair = upgradeLevel;
-            }
-            else if (upgradeName == "GPU")
-            {
-                SaveDataManager.gameProgressData.upgradeIncrementGPU = upgradeIncrement;
-                SaveDataManager.gameProgressData.upgradeCostGPU = upgradeCost;
-                SaveDataManager.gameProgressData.upgradeLevelGPU = upgradeLevel;
-            }
-            else if (upgradeName == "GPT")
-            {
-                SaveDataManager.gameProgressData.upgradeIncrementGPT = upgradeIncrement;
-                SaveDataManager.gameProgressData.upgradeCostGPT = upgradeCost;
-                SaveDataManager.gameProgressData.upgradeLevelGPT = upgradeLevel;
-            }
-            
         }
     }
 }

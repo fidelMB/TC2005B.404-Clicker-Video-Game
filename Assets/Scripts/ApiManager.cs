@@ -20,12 +20,6 @@ public class ApiManager : MonoBehaviour
     public GameObject fila_usuario_leaderboard;
     public GameObject leaderboard;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     public void GetLeaderboard()
     {
         StartCoroutine(GetLeaderboard("http://localhost:5000/leaderboard"));
@@ -33,7 +27,6 @@ public class ApiManager : MonoBehaviour
     
     IEnumerator GetLeaderboard(String uri)
     {
-        RectTransform rt_leaderboard = leaderboard.GetComponent<RectTransform>();
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
             yield return webRequest.SendWebRequest();
