@@ -38,7 +38,7 @@ public class ApiManager : MonoBehaviour
         {
             yield return webRequest.SendWebRequest();
 
-            switch (webRequest.result)
+            switch (webRequest.result)  
             {
                 case UnityWebRequest.Result.ConnectionError:
                 case UnityWebRequest.Result.DataProcessingError:
