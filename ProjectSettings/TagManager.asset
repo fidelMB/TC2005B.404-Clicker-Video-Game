@@ -43,6 +43,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: New Layer 4
+    uniqueID: 1591075907
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: desk
+    uniqueID: 1039060103
+    locked: 0
+  - name: player
+    uniqueID: 3235723047
+    locked: 0
+  - name: chair
+    uniqueID: 4238315537
     locked: 0
