@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class ScoreManager : MonoBehaviour
 {
+    private SaveDataManager SaveDataManager; // Referencia al SaveDataManager para poder acceder a las variables dentro de él
     public TMP_Text neoCoinsText; // Texto que muestra las monedas
     public float neoCoins; // Monedas
     public float clickValue; // Valor de las monedas ganadas por click
@@ -30,6 +31,10 @@ public class ScoreManager : MonoBehaviour
         // Neo coins ganadas por segundo en el autoclick
         neoCoins += autoClickValue * Time.deltaTime;
 
+        // Guarda el progreso del juego
+        SaveDataManager.gameProgressData.neoCoins = (int)neoCoins;
+        SaveDataManager.gameProgressData.autoClickValue = (int)autoClickValue;
+        SaveDataManager.gameProgressData.clickPowerValue = (int)clickValue;
     }
 
     // Método para añadir monedas al hacer click
