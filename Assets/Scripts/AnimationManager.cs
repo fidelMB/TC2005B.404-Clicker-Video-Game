@@ -3,7 +3,7 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour
 {
     private Animator animator;
-    [SerializeField] public ScoreManager scoreManager;
+    [SerializeField] private ScoreManager scoreManager;
 
     void Start()
     {
