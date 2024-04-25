@@ -15,7 +15,7 @@ public class AnimationManager : MonoBehaviour
     {
         if (scoreManager.autoClickValue > 0)
         {
-            animator.SetBool("autoClick", true);
+            animator.SetBool("autoClick", true);    
         }
     }
 

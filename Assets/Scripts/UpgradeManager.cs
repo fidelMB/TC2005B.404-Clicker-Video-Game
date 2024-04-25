@@ -26,15 +26,15 @@ public class UpgradeManager : MonoBehaviour
         // si es de click se muestra el incremento en monedas por click
         if (upgradeType == "Auto Click")
         {
-            upagradeNameLevelAndNextLevelText.text = upgradeName + " Lvl " + upgradeLevel + "\nLvl Up: " + upgradeIncrement + "<sprite name=neo_coin>/s";
+            upagradeNameLevelAndNextLevelText.text = upgradeName + " Lvl " + upgradeLevel + "\nLvl Up: " + FormatNumber(upgradeIncrement) + "<sprite name=neo_coin>/s";
         }
         else if (upgradeType == "Click Power")
         {
-            upagradeNameLevelAndNextLevelText.text = upgradeName + " Lvl " + upgradeLevel + "\nLvl Up: " + upgradeIncrement + "<sprite name=neo_coin>/click";
+            upagradeNameLevelAndNextLevelText.text = upgradeName + " Lvl " + upgradeLevel + "\nLvl Up: " + FormatNumber(upgradeIncrement) + "<sprite name=neo_coin>/click";
         }
         
         // Actualizar texto del botón de compra
-        upgradeBuyButtonText.text = "<sprite name=neo_coin>" + upgradeCost;
+        upgradeBuyButtonText.text = "<sprite name=neo_coin>" + FormatNumber(upgradeCost);
     }
 
     // Método para comprar un upgrade
@@ -74,6 +74,24 @@ public class UpgradeManager : MonoBehaviour
             // Actualizar texto del botón
             upgradeBuyButtonText.text = "<sprite name=neo_coin>" + upgradeCost;
 
+        }
+    }
+    private string FormatNumber(float number)
+    {
+        if (number >= 1000000)
+        {
+            float num = number / 1000000f;
+            return num.ToString("0.0") + "M";
+        }
+        if (number >= 1000)
+        {
+            float num = number / 1000f;
+            return num.ToString("0.0") + "k";
+        }
+        else
+        {
+            number = Mathf.RoundToInt(number);
+            return number.ToString();
         }
     }
 }

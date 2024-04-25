@@ -29,9 +29,9 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         // Actualiza el texto de las monedas
-        neoCoinsText.text = "<sprite name=neo_coin>" + (int)neoCoins;
-        neoCoinsPerSec.text = ((int)autoClickValue).ToString() + "<sprite name=neo_coin>/s";
-        neoCoinsPerClick.text = ((int)clickValue).ToString() + "<sprite name=neo_coin>/click";
+        neoCoinsText.text = "<sprite name=neo_coin>" + FormatNumber(neoCoins);
+        neoCoinsPerSec.text = FormatNumber(autoClickValue) + "<sprite name=neo_coin>/s";
+        neoCoinsPerClick.text = FormatNumber(clickValue) + "<sprite name=neo_coin>/click";
 
         // Neo coins ganadas por segundo en el autoclick
         neoCoins += autoClickValue * Time.deltaTime;
@@ -42,5 +42,24 @@ public class ScoreManager : MonoBehaviour
     public void Hit()
     {
         neoCoins += clickValue;
+    }
+
+    private string FormatNumber(float number)
+    {
+        if (number >= 1000000)
+        {
+            float num = number / 1000000f;
+            return num.ToString("0.0") + "M";
+        }
+        if (number >= 1000)
+        {
+            float num = number / 1000f;
+            return num.ToString("0.0") + "k";
+        }
+        else
+        {
+            number = Mathf.RoundToInt(number);
+            return number.ToString();
+        }
     }
 }

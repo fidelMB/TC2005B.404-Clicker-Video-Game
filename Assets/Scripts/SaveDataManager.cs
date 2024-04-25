@@ -12,7 +12,7 @@ public class SaveDataManager : MonoBehaviour
 {
     [SerializeField] private ScoreManager ScoreManager; // Referencia al ScoreManager para poder acceder a las variables dentro de él
     [SerializeField] private UpgradeManager UpgradeManagerMouse;
-    [SerializeField] private UpgradeManager UpgradeManagerChair;
+    [SerializeField] private UpgradeManager UpgradeManagerCriptogranja;
     [SerializeField] private UpgradeManager UpgradeManagerGPU;
     [SerializeField] private UpgradeManager UpgradeManagerGPT;
 
@@ -46,9 +46,9 @@ public class SaveDataManager : MonoBehaviour
             upgradeIncrementMouse = UpgradeManagerMouse.upgradeIncrement,
             upgradeLevelMouse = UpgradeManagerMouse.upgradeLevel,
 
-            upgradeCostChair = UpgradeManagerChair.upgradeCost,
-            upgradeIncrementChair = UpgradeManagerChair.upgradeIncrement,
-            upgradeLevelChair = UpgradeManagerChair.upgradeLevel,
+            upgradeCostCriptogranja = UpgradeManagerCriptogranja.upgradeCost,
+            upgradeIncrementCriptogranja = UpgradeManagerCriptogranja.upgradeIncrement,
+            upgradeLevelCriptogranja = UpgradeManagerCriptogranja.upgradeLevel,
 
             upgradeCostGPU = UpgradeManagerGPU.upgradeCost,
             upgradeIncrementGPU = UpgradeManagerGPU.upgradeIncrement,
@@ -120,9 +120,9 @@ public class SaveDataManager : MonoBehaviour
                     UpgradeManagerMouse.upgradeIncrement = saveData.upgradeIncrementMouse;
                     UpgradeManagerMouse.upgradeLevel = saveData.upgradeLevelMouse;
 
-                    UpgradeManagerChair.upgradeCost = saveData.upgradeCostChair;
-                    UpgradeManagerChair.upgradeIncrement = saveData.upgradeIncrementChair;
-                    UpgradeManagerChair.upgradeLevel = saveData.upgradeLevelChair;
+                    UpgradeManagerCriptogranja.upgradeCost = saveData.upgradeCostCriptogranja;
+                    UpgradeManagerCriptogranja.upgradeIncrement = saveData.upgradeIncrementCriptogranja;
+                    UpgradeManagerCriptogranja.upgradeLevel = saveData.upgradeLevelCriptogranja;
 
                     UpgradeManagerGPU.upgradeCost = saveData.upgradeCostGPU;
                     UpgradeManagerGPU.upgradeIncrement = saveData.upgradeIncrementGPU;
@@ -149,9 +149,9 @@ public class SaveDataManager : MonoBehaviour
         public float upgradeIncrementMouse;
         public int upgradeLevelMouse;
 
-        public int upgradeCostChair;
-        public float upgradeIncrementChair;
-        public int upgradeLevelChair;
+        public int upgradeCostCriptogranja;
+        public float upgradeIncrementCriptogranja;
+        public int upgradeLevelCriptogranja;
 
         public int upgradeCostGPU;
         public float upgradeIncrementGPU;
