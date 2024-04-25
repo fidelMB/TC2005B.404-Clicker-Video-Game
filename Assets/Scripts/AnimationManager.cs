@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
@@ -16,5 +17,18 @@ public class AnimationManager : MonoBehaviour
         {
             animator.SetBool("autoClick", true);
         }
+    }
+
+    public void OnCharacterClick()
+    {
+        animator.SetBool("click", true);
+        StartCoroutine(ResetClickAnimation());
+    }
+
+    IEnumerator ResetClickAnimation()
+    {
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        yield return new WaitForSeconds(stateInfo.length);
+        animator.SetBool("click", false);
     }
 }
