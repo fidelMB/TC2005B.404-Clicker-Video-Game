@@ -9,6 +9,8 @@ TagManager:
   - neo_coins
   - neo_stars
   - puntuacion
+  - Chair
+  - Monitor
   layers:
   - Default
   - TransparentFX

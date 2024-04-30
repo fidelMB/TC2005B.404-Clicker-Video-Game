@@ -65,7 +65,7 @@ public class UpgradeManager : MonoBehaviour
                 upgradeCost = (int)(upgradeCost * 2.5f);
                 upgradeLevel++;
                 upgradeIncrement = upgradeIncrement + upgradeIncrementAdder;
-                ScoreManager.clickValue = upgradeIncrement;
+                ScoreManager.clickValue += upgradeIncrement;
 
                 // Actualizar texto de nombre, nivel y siguiente nivel
                 upagradeNameLevelAndNextLevelText.text = upgradeName + " Lvl " + upgradeLevel + "\nLvl Up: "  + upgradeIncrement + "<sprite name=neo_coin>/click";
